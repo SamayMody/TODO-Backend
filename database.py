@@ -13,19 +13,20 @@ def create(data):
 def all():
     response = collection.find({})
     data = []
-    for i in response :
-        i["_id"] = str(i["id"])
+    for i in response:
+        i["_id"] = str(i["_id"])
         data.append(i)
     return data
 
 def get_oneWholeDayTasks(condition):
-    response = collection.find_one({"date" : condition})
-    response["_id"] = str(response["_id"])
-    return response
+    response = collection.find({"date": condition})
+    tasks = [task for task in response]
+    for task in tasks:
+        task["_id"] = str(task["_id"])
+    return tasks
 
-
-def delete(condition):
-    response = collection.delete_one({"date" : condition})
+def delete(date: int , completed: bool):
+    response = collection.delete_one({"date" : date , "completed" : completed})
     return response.deleted_count
 
 def update(data):
@@ -33,7 +34,7 @@ def update(data):
     response = collection.update_one(
         {"date": data["date"]},
         {"$set": {
-            "completed": data["completion_status"],
+            "completed": data["completed"],
         }}
     )
     return response.modified_count
