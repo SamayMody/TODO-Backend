@@ -25,8 +25,8 @@ def update(data:modal.Task):
     return {"updated": True, "data": data}
 
 @app.delete("/delete")
-def delete(date: int , completed: bool):
-    data = database.delete(date , completed)
+def delete(date: int ,task_description: str, completed: bool):
+    data = database.delete(date ,task_description, completed)
     return {"deleted": True , "deleted_count": data}
 
 
