@@ -25,16 +25,18 @@ def get_oneWholeDayTasks(condition):
         task["_id"] = str(task["_id"])
     return tasks
 
-def delete(date: int , completed: bool):
-    response = collection.delete_one({"date" : date , "completed" : completed})
+def delete(date: int , task_description: str , completed: bool):
+    response = collection.delete_one({"date": date ,"task_description": task_description, "completed": completed})
     return response.deleted_count
 
 def update(data):
     data = dict(data)
     response = collection.update_one(
-        {"date": data["date"]},
+        {"date": data["date"] , "task_description": data["task_description"]},
         {"$set": {
-            "completed": data["completed"],
+
+            "completed": data["completed"]
+
         }}
     )
     return response.modified_count
