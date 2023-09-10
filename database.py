@@ -1,6 +1,12 @@
 import pymongo
 
-MongoURI = "mongodb+srv://samaymody:Srmsam%4033@cluster0.ri5c637.mongodb.net/"
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+MongoURI = os.getenv('MongoURL')
+
+
 client = pymongo.MongoClient(MongoURI)
 db = client["TODO_Application"]
 collection = db["Task"]
