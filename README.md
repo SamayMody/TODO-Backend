@@ -42,7 +42,9 @@ pip install -r requirements.txt
 - Now "**MongoURL**" is another variable having my cluster connection link in the **.env** file that is created to store sensitive information such as the cluster connection link.
 - The **.env** file in this repository is just an example of what it should contain to run this project. Replace the example link with your actual cluster connect link.
 - Run the below command in your terminal :
- ```uvicorn main:app --reload```
+ ```
+uvicorn main:app --reload
+```
 - Open the following link to test the api [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
 
  ## Output Screenshots : 
