@@ -38,9 +38,11 @@ pip install -r requirements.txt
 - Copy the files in your IDE or text editor.
 - run the following to install the dependencies ``` pip install -r requirements.txt ``` .
 - Create your own MongoDB cluster. Now you would have to connect your MongoDB cluster with your code using the link provided by Mongodb which contains your username and password
-- The variable **MongoURI** in the **database.py** file has my cluster link in the form of os.getenv('MongoURL')
-- Now **MongoURL** is another variable having my cluster connection link in the **.env** file that is created to store sensitive information such as the cluster connection link.
+- The variable "**MongoURI**" in the **database.py** file has my cluster link in the form of os.getenv('MongoURL')
+- Now "**MongoURL**" is another variable having my cluster connection link in the **.env** file that is created to store sensitive information such as the cluster connection link.
 - The **.env** file in this repository is just an example of what it should contain to run this project. Replace the example link with your actual cluster connect link.
+- Run the below command in your terminal :
+ ```uvicorn main:app --reload```
 - Open the following link to test the api [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
 
  ## Output Screenshots : 
