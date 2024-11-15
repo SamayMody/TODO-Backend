@@ -1,4 +1,4 @@
-# "TODO-Backend" a task given by Alexadevclub SRM
+
 
 ## Short description: 
 I have created a simple **CRUD** application using Fastapi which is a trendy python framework along with Mongodb database.This backend application **creates,reads,updates,deletes and displays completion %** of tasks set by the user . 
